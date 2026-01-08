@@ -561,7 +561,8 @@ class Save {
       var content = utf8.encode(xml);
       _archiveFiles[xmlFile] = ArchiveFile(xmlFile, content.length, content);
     }
-    return ZipEncoder().encode(_cloneArchive(_excel._archive, _archiveFiles));
+    return ZipEncoder()
+        .encodeBytes(_cloneArchive(_excel._archive, _archiveFiles));
   }
 
   void _setColumns(Sheet sheetObject, XmlDocument xmlFile) {
